@@ -3,7 +3,10 @@
 namespace Liversage.Primitives;
 
 [AttributeUsage(AttributeTargets.Struct)]
-public sealed class PrimitiveAttribute : Attribute
+#if !IS_GENERATOR
+public
+#endif
+sealed class PrimitiveAttribute : Attribute
 {
     public PrimitiveAttribute(Features features = Features.Default) => Features = features;
 

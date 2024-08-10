@@ -3,7 +3,10 @@
 namespace Liversage.Primitives;
 
 [Flags]
-public enum Features
+#if !IS_GENERATOR
+public
+#endif
+enum Features
 {
     /// <summary>
     ///   Implements constructor, ToString() method and conversions to and
@@ -14,7 +17,7 @@ public enum Features
     /// <summary>
     ///   Implements IEquatable&lt;T&gt; using the == operator for the inner
     ///   type and overrides Equals() and GetHashCode() and implements ==
-    ///   and != operators. 
+    ///   and != operators.
     /// </summary>
     Equatable,
 
