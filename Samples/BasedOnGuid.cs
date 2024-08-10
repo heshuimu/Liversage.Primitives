@@ -8,5 +8,5 @@ public readonly partial struct BasedOnGuid
 {
     readonly Guid id;
 
-    public static BasedOnGuid CreateNew() => Guid.NewGuid();
+    public static BasedOnGuid CreateNew() => (BasedOnGuid)Guid.NewGuid();
 }

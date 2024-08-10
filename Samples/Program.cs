@@ -39,7 +39,7 @@ public static class Program
         var id2 = FromExternal(456);
         Console.WriteLine($"ID: {id2}");
 
-        static BasedOnInt FromExternal(int id) => id;
+        static BasedOnInt FromExternal(int id) => (BasedOnInt)id;
 
         Console.WriteLine($"{id1} == {id2}: {id1 == id2}");
 
@@ -90,7 +90,7 @@ public static class Program
         var id2 = FromExternal(Guid.NewGuid());
         Console.WriteLine($"ID: {id2}");
 
-        static BasedOnGuid FromExternal(Guid id) => id;
+        static BasedOnGuid FromExternal(Guid id) => (BasedOnGuid)id;
 
         Console.WriteLine($"{id1} == {id2}: {id1 == id2}");
 
@@ -234,7 +234,7 @@ public static class Program
         var value2 = FromExternal(new FixedPoint(456.789D));
         Console.WriteLine($"Value: {value2}");
 
-        static BasedOnCustom FromExternal(FixedPoint value) => value;
+        static BasedOnCustom FromExternal(FixedPoint value) => (BasedOnCustom)value;
 
         Console.WriteLine($"{value1} == {value2}: {value1 == value2}");
 
@@ -256,7 +256,7 @@ public static class Program
         var value2 = FromExternal((Direction.Right, 456));
         Console.WriteLine($"Tuple: {value2}");
 
-        static BasedOnTuple FromExternal((Direction, int) tuple) => tuple;
+        static BasedOnTuple FromExternal((Direction, int) tuple) => (BasedOnTuple)tuple;
 
         Console.WriteLine($"{value1} == {value2}: {value1 == value2}");
 

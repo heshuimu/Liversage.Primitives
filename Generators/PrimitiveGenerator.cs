@@ -140,7 +140,7 @@ public class PrimitiveGenerator : ISourceGenerator
             yield return descriptor.ConstructorSyntax();
 
         yield return descriptor.FromPrimitiveSyntax();
-        yield return descriptor.ImplicitCastFromPrimitiveSyntax();
+        yield return descriptor.ExplicitCastFromPrimitiveSyntax();
         if (!descriptor.Flags.HasFlag(PrimitiveDescriptorFlags.InnerIsString))
         {
             yield return descriptor.ToPrimitiveSyntax();

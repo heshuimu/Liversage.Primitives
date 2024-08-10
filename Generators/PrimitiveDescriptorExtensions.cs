@@ -42,8 +42,8 @@ static class PrimitiveDescriptorExtensions
                         .WithArgumentList(ArgumentList(SingletonSeparatedList(Argument(IdentifierName("value")))))))
             .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
 
-    public static MemberDeclarationSyntax ImplicitCastFromPrimitiveSyntax(this PrimitiveDescriptor descriptor)
-        => ConversionOperatorDeclaration(Token(SyntaxKind.ImplicitKeyword), IdentifierName(descriptor.Name))
+    public static MemberDeclarationSyntax ExplicitCastFromPrimitiveSyntax(this PrimitiveDescriptor descriptor)
+        => ConversionOperatorDeclaration(Token(SyntaxKind.ExplicitKeyword), IdentifierName(descriptor.Name))
             .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)))
             .WithParameterList(ParameterList(SingletonSeparatedList(Parameter(Identifier("value")).WithType(descriptor.InnerType))))
             .WithExpressionBody(
