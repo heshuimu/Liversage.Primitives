@@ -5,4 +5,7 @@
         <RootNamespace>Liversage.Primitives</RootNamespace>
         <PackageId>Liversage.Primitives.Models</PackageId>
     </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Remove="Nerdbank.GitVersioning" />
+    </ItemGroup>
 </Project>
