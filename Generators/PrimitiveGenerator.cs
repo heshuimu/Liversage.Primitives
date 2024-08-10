@@ -36,8 +36,8 @@ public class PrimitiveGenerator : ISourceGenerator
             var structSyntax = StructSyntax(descriptor);
             var members =
                 !descriptor.Flags.HasFlag(PrimitiveDescriptorFlags.IsInGlobalNamespace)
-                    ? (MemberDeclarationSyntax) FileScopedNamespaceDeclaration(ParseName(descriptor.NamespaceName))
-                        .WithMembers(new SyntaxList<MemberDeclarationSyntax>(structSyntax))
+                    ? (MemberDeclarationSyntax) NamespaceDeclaration(ParseName(descriptor.NamespaceName))
+                        .WithMembers(SingletonList<MemberDeclarationSyntax>(structSyntax))
                     : structSyntax;
             var compilationUnit = CompilationUnit()
                 .AddUsings(GetUsings(descriptor).ToArray())
